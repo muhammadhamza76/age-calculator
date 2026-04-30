@@ -212,8 +212,17 @@ document.addEventListener('DOMContentLoaded', () => {
         statMinutes.textContent = numFormat.format(diffMinutes);
         statSeconds.textContent = numFormat.format(diffSeconds);
 
-        // Reveal section smoothly without forcing a page jump
+        // Reveal section
         resultsSection.classList.remove('hidden');
+
+        // Scroll so the calculator card is at the top of the screen.
+        // This hides the top header and perfectly frames the inputs, button, and results.
+        setTimeout(() => {
+            const card = document.querySelector('.calculator-card');
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 50);
 
         // Animate numbers
         animateValue(resYears, 0, years, 1000);
