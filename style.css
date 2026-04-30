@@ -50,6 +50,26 @@ body {
     letter-spacing: 1px;
 }
 
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px;
+    z-index: 100;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-heading);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
 .nav-links {
     display: flex;
     gap: 1.5rem;
@@ -414,10 +434,51 @@ input[type=number] {
         align-items: stretch;
     }
     .top-nav {
-        display: none; /* Hide top nav on mobile for app-like feel */
+        display: flex;
+        padding: 1.5rem 16px;
+    }
+    .mobile-menu-btn {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: rgba(11, 12, 16, 0.98);
+        backdrop-filter: blur(10px);
+        border-left: 1px solid rgba(102, 252, 241, 0.15);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 6rem 2rem 2rem 2rem;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 99;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .nav-links.active {
+        right: 0;
+    }
+    .nav-links a {
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    /* Hamburger Animation to 'X' */
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
     .container {
-        padding: max(2rem, env(safe-area-inset-top, 2rem)) 16px max(2rem, env(safe-area-inset-bottom, 20px)) 16px;
+        padding: max(6rem, env(safe-area-inset-top, 6rem)) 16px max(2rem, env(safe-area-inset-bottom, 20px)) 16px;
         width: 100%;
     }
     

@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const statSeconds = document.getElementById('stat-seconds');
     const statNextBirthday = document.getElementById('stat-next-birthday');
 
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    }
+
     // Initialize Target Date to Today
     const today = new Date();
 
