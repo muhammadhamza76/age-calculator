@@ -212,13 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
         statMinutes.textContent = numFormat.format(diffMinutes);
         statSeconds.textContent = numFormat.format(diffSeconds);
 
-        // Reveal section
+        // Reveal section smoothly without forcing a page jump
         resultsSection.classList.remove('hidden');
-
-        // Scroll to results smoothly
-        setTimeout(() => {
-            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 50);
 
         // Animate numbers
         animateValue(resYears, 0, years, 1000);
