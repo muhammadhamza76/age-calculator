@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.yourwebsite.com/contact.html" />
+    <title>Contact Us | Age Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="nav-logo">AgeCalc</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="background-elements">
+        <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    </div>
+    
+    <main class="container">
+        <header class="header">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you.</p>
+        </header>
+
+        <section class="calculator-card glass-panel">
+            <form action="#" method="POST" style="display:flex; flex-direction:column; gap: 1.5rem;">
+                <div class="input-field" style="width:100%;">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your Name" style="width:100%; box-sizing:border-box;" required>
+                </div>
+                <div class="input-field" style="width:100%;">
+                    <label>Email</label>
+                    <input type="email" placeholder="Your Email" style="width:100%; box-sizing:border-box;" required>
+                </div>
+                <div class="input-field" style="width:100%;">
+                    <label>Message</label>
+                    <textarea placeholder="How can we help?" style="width:100%; padding:1rem; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--text-heading); font-size:1.1rem; font-family:'Outfit', sans-serif; resize:vertical; min-height:150px; box-sizing:border-box;" required></textarea>
+                </div>
+                <button type="button" class="primary-btn" onclick="alert('Message sent! (This is a demo contact form)')">Send Message</button>
+            </form>
+            <br>
+            <div style="text-align:center;">
+                <a href="index.html" style="color:var(--text-primary); text-decoration:none; opacity:0.8; font-weight:600;">&larr; Back to Calculator</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Premium Age Calculator. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- GDPR Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <p>We use cookies to serve personalized ads and analyze traffic. By using our site, you consent to our <a href="privacy.html" style="color:var(--accent-color)">Privacy Policy</a>.</p>
+        <button onclick="acceptCookies()">Got it!</button>
+    </div>
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookieConsent', 'true');
+        }
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

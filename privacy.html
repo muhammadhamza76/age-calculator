@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.yourwebsite.com/privacy.html" />
+    <title>Privacy Policy | Age Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="nav-logo">AgeCalc</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="background-elements">
+        <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    </div>
+    
+    <main class="container">
+        <header class="header">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is strictly protected.</p>
+        </header>
+
+        <section class="seo-content glass-panel">
+            <h2>1. Information We Collect</h2>
+            <p>Our Age Calculator runs entirely in your web browser using JavaScript. We do <strong>not</strong> collect, store, transmit, or share any personal information, including the dates of birth you enter. All calculations are performed locally on your device.</p>
+            
+            <h2>2. Cookies and Analytics</h2>
+            <p>We may use third-party services like Google Analytics or Google AdSense. These services may use cookies to serve ads based on your prior visits to this or other websites. You can opt out of personalized advertising by visiting Google's Ads Settings.</p>
+
+            <h2>3. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please <a href="contact.html" style="color:var(--accent-color)">contact us</a>.</p>
+            
+            <br>
+            <a href="index.html" class="primary-btn" style="text-decoration:none; display:inline-block; text-align:center; padding: 1rem 2rem;">Back to Calculator</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Premium Age Calculator. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- GDPR Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <p>We use cookies to serve personalized ads and analyze traffic. By using our site, you consent to our <a href="privacy.html" style="color:var(--accent-color)">Privacy Policy</a>.</p>
+        <button onclick="acceptCookies()">Got it!</button>
+    </div>
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookieConsent', 'true');
+        }
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>

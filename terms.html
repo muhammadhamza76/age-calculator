@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.yourwebsite.com/terms.html" />
+    <title>Terms of Service | Age Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="nav-logo">AgeCalc</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="background-elements">
+        <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    </div>
+    
+    <main class="container">
+        <header class="header">
+            <h1>Terms of Service</h1>
+            <p>By using this tool, you agree to these terms.</p>
+        </header>
+
+        <section class="seo-content glass-panel">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing and using the Premium Age Calculator, you accept and agree to be bound by the terms and provisions of this agreement.</p>
+            
+            <h2>2. Use of the Service</h2>
+            <p>The Age Calculator is provided for general informational purposes only. While we strive for mathematical accuracy, we make no guarantees regarding the absolute precision of the calculations for legal or official purposes.</p>
+
+            <h2>3. Disclaimer of Warranties</h2>
+            <p>The service is provided on an "as is" and "as available" basis without any warranties of any kind.</p>
+            
+            <br>
+            <a href="index.html" class="primary-btn" style="text-decoration:none; display:inline-block; text-align:center; padding: 1rem 2rem;">Back to Calculator</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Premium Age Calculator. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- GDPR Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <p>We use cookies to serve personalized ads and analyze traffic. By using our site, you consent to our <a href="privacy.html" style="color:var(--accent-color)">Privacy Policy</a>.</p>
+        <button onclick="acceptCookies()">Got it!</button>
+    </div>
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookieConsent', 'true');
+        }
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
