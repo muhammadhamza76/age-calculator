@@ -11,7 +11,12 @@
 <body>
     <nav class="top-nav">
         <a href="index.html" class="nav-logo">AgeCalc</a>
-        <div class="nav-links">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
@@ -61,6 +66,7 @@
         <button onclick="acceptCookies()">Got it!</button>
     </div>
     <script>
+        // Cookie Consent
         function acceptCookies() {
             document.getElementById('cookie-banner').style.display = 'none';
             localStorage.setItem('cookieConsent', 'true');
@@ -68,6 +74,18 @@
         if (!localStorage.getItem('cookieConsent')) {
             document.getElementById('cookie-banner').style.display = 'flex';
         }
+
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
     </script>
 </body>
 </html>
