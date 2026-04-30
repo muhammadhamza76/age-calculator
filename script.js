@@ -215,12 +215,24 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reveal section
         resultsSection.classList.remove('hidden');
 
-        // Scroll so the calculator card is at the top of the screen.
-        // This hides the top header and perfectly frames the inputs, button, and results.
+        // Scroll so the entire results section is fully visible on screen.
+        // By aligning the bottom of the results to the bottom of the screen (with a small margin),
+        // we guarantee the full answer is shown without getting cut off.
         setTimeout(() => {
-            const card = document.querySelector('.calculator-card');
-            if (card) {
-                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (resultsSection) {
+                const rect = resultsSection.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Calculate the absolute bottom position of the results section
+                const resultsBottom = scrollTop + rect.bottom;
+                
+                // Scroll so the bottom of the results is exactly 40px from the bottom of the viewport
+                const targetY = resultsBottom - window.innerHeight + 40;
+                
+                window.scrollTo({
+                    top: targetY,
+                    behavior: 'smooth'
+                });
             }
         }, 50);
 
